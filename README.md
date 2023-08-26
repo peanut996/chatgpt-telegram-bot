@@ -17,6 +17,8 @@ cd chatgpt-telegram-bot
 # 需要写入配置
 vim config.yaml
 
+go mod download
+
 go run .
 ```
 
