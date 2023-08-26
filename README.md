@@ -3,24 +3,37 @@
 
 Telegram体验地址：[ChatGPTBot](https://t.me/simple8964bot)
 
-## 启动
+## 准备
 
-在项目的根目录下创建配置文件：
-    
++ [chatgpt-engine](https://github.com/peanut996/chatgpt-engine)
+
+## 运行
+
 ```bash
-cp config.example.yaml config.yaml
+git clone https://github.com/peanut996/chatgpt-telegram-bot.git
+
+cd chatgpt-telegram-bot
+
+# 需要写入配置
+vim config.yaml
+
+go run .
 ```
 
-引入ChatGPT的代理模块：
-    
-```bash
-git submodule init
+### 配置文件
+
+这里只是telegram bot的控制程序，实际的chatgpt通信仍然要交给[chatgpt-engine](https://github.com/peanut996/chatgpt-engine),
+所以需要运行起engine服务然后再启动  
+
+下面是配置文件：
+```yaml
+bot:
+  type: telegram
+  token: <your tg bot token> #你的telegram bot token
+engine:
+  port: <engine-port> # engine服务host
+  host: <engine-host> # engine服务端口号
 ```
 
-修改配置文件中的`secret`和`token`，然后运行：
-    
-```bash
-docker-compose up --build -d
-```
 
 
