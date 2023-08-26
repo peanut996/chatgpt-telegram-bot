@@ -33,4 +33,3 @@ jobs:
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
           project_path: "."
-          binary_name: "chatgpt-telegram-bot"
